@@ -112,7 +112,6 @@ Implement a trait-based authentication provider architecture using Rust's type s
 **4. Configuration System**
 - Enable/disable providers via configuration
 - Provider-specific configuration (isolated from other providers)
-- Dynamic configuration reload support
 
 ### Architecture Diagram
 
@@ -158,7 +157,6 @@ Implement a trait-based authentication provider architecture using Rust's type s
 **3. Configuration Flexibility**
 - Enable/disable mechanisms per deployment
 - Provider-specific configuration isolated from core
-- Dynamic configuration reload without restart
 
 **4. Backward Compatibility**
 - Existing authentication flows remain unchanged
@@ -216,7 +214,6 @@ This architecture integrates with DocumentDB's existing components:
 **Configuration System**
 - Extend setup configuration to support provider configuration
 - Support per-provider configuration sections
-- Enable dynamic configuration reload
 
 ---
 
@@ -395,7 +392,6 @@ Extend setup configuration to support provider management:
 2. **Enable/disable control**: Administrators can selectively enable mechanisms
 3. **Provider-specific settings**: Providers define their own configuration schema
 4. **Sensible defaults**: Existing mechanisms (SCRAM, OIDC) enabled by default
-5. **Dynamic reload**: Configuration changes can be applied without restart (future enhancement)
 
 **Configuration Loading:**
 
@@ -534,13 +530,7 @@ Extend setup configuration to support provider management:
 
 ### Open Questions
 
-- [ ] Question: Should providers be dynamically loadable (e.g., via shared libraries)?
-  - Discussion: TBD
-  - Current approach: Compile-time registration for simplicity and safety
-
-- [ ] Question: Should we support provider priority/ordering for mechanism negotiation?
-  - Discussion: TBD
-  - Current approach: Client specifies mechanism explicitly
+*Open questions will be tracked here as they arise during implementation*
 
 ### Implementation Notes
 
